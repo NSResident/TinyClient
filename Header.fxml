@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="100.0" minWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mailProject.MailClientController">
+   <children>
+      <HBox id="header" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;">
+            <children>
+                <!--TimePane here -->
+                <Pane id="TimePane" minHeight="100.0" minWidth="200" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;"/>
+                <!-- Toolbar -->
+                <StackPane minHeight = "100.0" minWidth= "300" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <ToolBar>
+                                <Button id="Send" text="Sent" onAction="#compose"/>
+                                <Button id="Read" text="Read" onAction="#filterInbox"/>
+                                <Button id="Unread" text="Unread" onAction="#filterInbox"/>
+                                <Button id="Login" text="login" onAction="#login"/>
+                                <Button id="Logout" text="logout" onAction="#logout"/>
+                        </ToolBar>
+                    </children>
+                </StackPane>
+            </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import java.awt.Font?>
+<BorderPane id="BorderPane " stylesheets="@UserPanel.css" styleClass="emailViewer" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mailProject.MailClientDriver">
+  <top>
+    <AnchorPane fx:id="AnchorPane1" id="AnchorPane1" maxHeight="50.0" minWidth="500.0" >
+    <children>
+        <HBox id="header" styleClass="header" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;">
+              <children>
+                  <!-- Toolbar -->
+                  <VBox spacing="5" styleClass="header">
+                      <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+                      <children>
+                          <Label text="Tiny Client" styleClass="headerLabel"/>
+                          <StackPane minHeight = "100.0" minWidth= "400" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                              <children>
+                                  <ToolBar>
+                                      <Button id="Compose" text="Compose" onAction="#compose"/>
+                                      <TextField id="Query" fx:id="Query"/>
+                                      <Button id="Search" text="Search" onAction="#search"/>
+                                      <Button id="ClearQuery" text="Clear" onAction="#clearQuery"/>
+                                  </ToolBar>
+                              </children>
+                          </StackPane>
+                      </children>
+                  </VBox>
+
+                  <VBox id="UserBox" styleClass="" spacing="25" minHeight="100.0" minWidth="200" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
+                      <padding><Insets top="60" right="25" bottom="25" left="25"/></padding>
+                      <children>
+                          <Label fx:id="EmailOfUser" styleClass="userLabel" text="New User"/>
+                          <ToolBar>
+                              <Button id="Login" text="login" onAction="#login"/>
+                              <Button id="Logout" text="logout" onAction="#logout"/>
+                              <ComboBox id="Users" fx:id="Users">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                          </ToolBar>
+                      </children>
+                  </VBox>
+              </children>
+        </HBox>
+    </children>
+    </AnchorPane>
+  </top>
+  <center>
+    <AnchorPane id="AnchorPane2" styleClass="emailViewer" minHeight="300.0" maxWidth="1000.0" >
+      <children>
+        <ScrollPane styleClass="emailViewer" fx:id="EmailViewer" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" style=" -fx-border-color:#000000; -fx-border-width: 1; -fx-border-style: solid;">
+            <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+            <VBox spacing="15" styleClass="Vbox">
+                <children>
+                    <Label fx:id="ViewerSubject" styleClass="subjectLabel">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                    </Label>
+                    <ScrollPane styleClass="viewerBodyPane" minHeight="300">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <Label fx:id="ViewerBody" styleClass="bodyLabel" text="No email to display">
+                            <padding><Insets top="10" right="10" bottom="10" left="20"/></padding>
+                        </Label>
+            </ScrollPane>
+                </children>
+            </VBox>
+
+        </ScrollPane>
+      </children>
+    </AnchorPane>
+  </center>
+  <left>
+    <AnchorPane id="AnchorPane3" minWidth="600" maxWidth = "1000.0">
+      <children>
+          <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;">
+            <content>
+              <TableView fx:id="tableView">
+                <columns>
+
+                   <TableColumn fx:id="Subject" styleClass="tableCell" text="Subject" prefWidth="250">
+                  <cellValueFactory><PropertyValueFactory property="subject" />
+                    </cellValueFactory>
+                  </TableColumn>
+                  
+                  <TableColumn fx:id="Sender" styleClass="tableCell" text="Sender" prefWidth="200">
+                  <cellValueFactory><PropertyValueFactory property="sender" />
+                    </cellValueFactory>
+                  </TableColumn>
+                  
+                  <TableColumn fx:id="Date" styleClass="tableCell" text="Date" prefWidth="125">
+                      <cellValueFactory><PropertyValueFactory property="date" />
+                    </cellValueFactory>
+                  </TableColumn>
+                  
+                </columns>    
+                <items>
+                    <FXCollections fx:factory="observableArrayList"> 
+                    </FXCollections>
+                </items>
+              </TableView>
+
+            </content>
+          </ScrollPane>
+      </children>
+    </AnchorPane>
+  </left>
+</BorderPane>

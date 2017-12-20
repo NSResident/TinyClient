@@ -1,0 +1,68 @@
+.userLabel{
+    -fx-font-family: "arial";
+    -fx-font-size: 18px;
+    -fx-font-style: normal;
+    -fx-font-weight: bolder;
+}
+
+.header{
+    -fx-background-color: #5ea7ed;
+    -fx-border-style: solid;
+    -fx-border-width: 3px;
+}
+
+.headerLabel{
+    -fx-font-family: 'Lucida Console',Monaco,monospace;
+    -fx-font-size: 38px;
+    -fx-font-style: italic;
+    -fx-font-weight: bolder;
+}
+
+.headerPane{
+    -fx-border-style: solid;
+    -fx-border-width: 3px;
+}
+
+.button{
+    -fx-font-size: 16px;
+}
+
+.table-view .column-header .label{
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+    -fx-underline: true;
+    -fx-background-color: azure;
+}
+
+.tableCell{
+    -fx-font-size: 14px;
+}
+
+.subjectLabel{
+    -fx-font-family: "arial";
+    -fx-font-size: 28px;
+    -fx-font-style: italic;
+    -fx-underline: true;
+    -fx-font-weight: bolder;
+    -fx-border-width: 5px;
+}
+
+.viewerBodyPane{
+    -fx-border-width: 5px;
+    -fx-border-color: black;
+    -fx-border-style: solid;
+}
+
+.bodyLabel{
+    -fx-font-size: 16px;
+}
+
+.emailViewer{
+    -fx-background-color: azure;
+}
+
+.Vbox{
+    -fx-background-color: azure;
+}
+

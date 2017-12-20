@@ -1,0 +1,16 @@
+Project:
+    -Encrypted mailing
+    -Outbox
+    -Multiple accounts to be serialized
+Client:
+
+User:
+
+FXML:
+
+Aeisthetics:
+    -Fix compose box to fit window
+    -Fix toolbar to have more spacing between buttons
+    -Add Title above tool bar
+    -Add border to Subject and body in email viewer
+    -Add timepane in upper left
